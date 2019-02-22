@@ -1,14 +1,16 @@
-import React, {Component} from 'react';
-import { Route, Switch} from 'react-router-dom';
+import React from 'react';
 
 // COMPONENTS
 import Header from '../components/layouts/Header'
+import ErrorPopup from '../components/popups/ErrorPopup'
 
 const FrontLayoutHoc = (WrappedPage) => {
     return (props) => (
+
         <div>
             <Header/>
             <WrappedPage {...props}/>
+            <ErrorPopup {...props}/>
         </div>
     )
 }
