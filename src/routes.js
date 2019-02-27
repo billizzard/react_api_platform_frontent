@@ -5,6 +5,8 @@ import { Route, Switch} from 'react-router-dom';
 import Home from './components/pages/Home'
 import Registration from './components/pages/Registration'
 import Login from './components/pages/Login'
+import Logout from './components/pages/Logout'
+import ProductList from './components/pages/private/product/ProductList'
 import IndexRoom from './components/pages/private/IndexRoom'
 import PrivateRoute from './components/auth/PrivateRoute'
 import {ROLE_USER} from "./constants/roles";
@@ -15,7 +17,14 @@ class Routes extends Component {
         return(
             <Switch>
                 <Route path="/security/login" exact component={Login}/>
+                <Route path="/security/logout" exact component={Logout}/>
                 <Route path="/security/registration" exact component={Registration}/>
+                <PrivateRoute
+                    path="/room/products"
+                    roles={[ROLE_USER]}
+                    exact
+                    component={ProductList}
+                />
                 <PrivateRoute
                     path="/room"
                     roles={[ROLE_USER]}

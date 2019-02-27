@@ -64,6 +64,10 @@ a:focus {
     transition: all 0.3s;
 }
 
+#sidebar a {
+    color: #e4e4e4;
+}
+
 #sidebar.active {
     margin-left: -250px;
 }
@@ -77,6 +81,7 @@ a:focus {
     padding: 20px 0;
     border-bottom: 1px solid #47748b;
 }
+
 
 #sidebar ul p {
     color: #fff;
@@ -147,9 +152,18 @@ a.article:hover {
 
 #content {
     width: 100%;
-    padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
+    background: #eeeeee;
+    color: #3e5569;
+}
+
+#content .form-control {
+    border-radius:1px
+}
+
+#page-content {
+    padding: 5px;
 }
 
 /* ---------------------------------------------------
