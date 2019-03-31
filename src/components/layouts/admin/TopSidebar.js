@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {toggleSidebar} from "../../../actions";
+import {toggleSidebar} from "../../../store/actions";
 import {Link} from 'react-router-dom';
 
 class TopSidebar extends Component {

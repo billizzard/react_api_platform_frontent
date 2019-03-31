@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import FrontLayoutHoc from "../../hoc/FrontLayoutHoc";
-import {registrationUser} from "../../actions";
+import {registrationUser} from "../../store/actions";
 import {connect} from "react-redux";
 
 class Registration extends Component {

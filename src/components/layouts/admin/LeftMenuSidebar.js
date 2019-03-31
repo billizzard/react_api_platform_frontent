@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import AdminLeftMenu from '../../menus/AdminLeftMenu/'
 import {leftAdminMenu} from '../../../constants/menus'
-import {toggleSidebar} from "../../../actions";
+import {toggleSidebar} from "../../../store/actions";
 import {connect} from "react-redux";
 
 class LeftMenuSidebar extends Component {

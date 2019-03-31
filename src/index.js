@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware} from "redux";
 //import promiseMiddleware from 'redux-promise'
-import reducers from './reducers'
+import reducers from './store/reducers'
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
 
 const App = () => {

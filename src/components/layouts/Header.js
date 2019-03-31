@@ -28,7 +28,8 @@ const TopBar = (props) => {
               <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
                   Company name
               </Typography>
-              <Button href="/security/registration">Registration</Button>
+              <span>sdfsdf</span>
+              <Button href="/security/registration" variant="outlined">Registration</Button>
               <Button color="primary" variant="outlined">
                   Login
               </Button>

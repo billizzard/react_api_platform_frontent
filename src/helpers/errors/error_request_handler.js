@@ -1,5 +1,3 @@
-// import React from 'react';
-
 export default function (error) {
     if (error.code && error.message) {
         return {
@@ -10,6 +8,6 @@ export default function (error) {
 
     return {
         code: 0,
-        message: 'Can\t execute request'
+        message: 'Can\'t execute request'
     }
 }
