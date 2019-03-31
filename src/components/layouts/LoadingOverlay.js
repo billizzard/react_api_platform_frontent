@@ -11,7 +11,7 @@ const LoadingOverlay = (props) => {
                     zIndex: 1200
                 })
             }}
-            active={true}
+            active={props.active}
             spinner
             text={props.text ? props.text : 'Loading...'}
         >

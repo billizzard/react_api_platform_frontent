@@ -1,13 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux'
 
-class ErrorPopup extends React.Component {
+class Snackbar extends React.Component {
     state = {
         isOpen: false
     }
 
     getErrorMessage = () => {
-        return this.props.errorPopup ? this.props.errorPopup.message: ''
+        return this.props.snackbar ? this.props.snackbar.message: ''
     }
 
     render() {
@@ -21,8 +21,8 @@ class ErrorPopup extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        errorPopup: state.error.errorPopup
+        snackbar: state.snackbar.data
     }
 }
 
-export default connect(mapStateToProps, null)(ErrorPopup)
+export default connect(mapStateToProps, null)(Snackbar)

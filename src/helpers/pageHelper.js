@@ -1,5 +1,13 @@
-export const loadDecorator = pureAction => async (...args) => {
-    console.log('%c START DECORATOR', 'background: orange; color: red;');
-    await pureAction(...args)
-    console.log('%c END DECORATOR', 'background: orange; color: red;');
+import {toggleLoadingOverlay} from "../store/actions";
+
+/**
+ * Get pureAction and add Loading Overlay while action is running
+ * @param pureAction
+ * @returns {Function}
+ */
+export const loadingOverlay = pureAction => async (...args) => {
+    const dispatch = args[0];
+    dispatch(toggleLoadingOverlay(true));
+    await pureAction(...args);
+    dispatch(toggleLoadingOverlay(false));
 }
