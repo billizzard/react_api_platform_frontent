@@ -2,15 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import thunk from 'redux-thunk'
-
 import Routes from './routes'
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 // COMPONENTS
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware} from "redux";
-//import promiseMiddleware from 'redux-promise'
 import reducers from './store/reducers'
-const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
+import {errorMiddleware} from "./helpers/errors/errorMiddleware";
+
+const createStoreWithMiddleware = applyMiddleware(errorMiddleware, thunk)(createStore)
 
 const App = () => {
     return (
