@@ -3,9 +3,9 @@ import { Route, Switch} from 'react-router-dom';
 
 // COMPONENTS
 import Home from './components/pages/Home'
-import Registration from './components/pages/Registration'
-import Login from './components/pages/Login'
-import Logout from './components/pages/Logout'
+import Registration from './components/pages/security/Registration'
+import Login from './components/pages/security/Login'
+import Logout from './components/pages/security/Logout'
 import ProductList from './components/pages/private/product/ProductList'
 import IndexRoom from './components/pages/private/IndexRoom'
 import PrivateRoute from './components/auth/PrivateRoute'

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import FrontLayoutHoc from "../../hoc/FrontLayoutHoc";
+import FrontLayoutHoc from "../../../hoc/FrontLayoutHoc";
 import {connect} from 'react-redux'
-import {loginUser} from '../../store/actions'
-import {saveAuthInfo} from "../../helpers/storage_helper";
+import {loginUser} from '../../../store/actions'
+import {saveAuthInfo} from "../../../helpers/storage_helper";
 
 class Login extends Component {
     state = {

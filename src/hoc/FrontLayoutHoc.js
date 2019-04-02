@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 // COMPONENTS
 import Header from '../components/layouts/Header'
-import ErrorPopup from '../components/popups/Snackbar'
+import Snackbar from '../components/popups/snackbar/GlobalSnackbar'
 import LoadingOverlay from "../components/layouts/LoadingOverlay";
 
 const FrontLayoutHoc = (WrappedPage) => {
@@ -16,7 +16,7 @@ const FrontLayoutHoc = (WrappedPage) => {
                     >
                         <Header/>
                         <WrappedPage {...this.props}/>
-                        <ErrorPopup {...this.props}/>
+                        <Snackbar />
                     </LoadingOverlay>
                 </div>
             )
