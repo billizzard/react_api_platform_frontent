@@ -25,7 +25,7 @@ const FrontLayoutHoc = (WrappedPage) => {
 
     function mapStateToProps(state) {
         return {
-            'isPageLoading': state.page.isLoading
+            'isPageLoading': state.page.isLoading,
         }
     }
 

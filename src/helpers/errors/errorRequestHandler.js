@@ -4,7 +4,7 @@ export default function (error) {
         error.message = 'Can\'t execute request';
     }
 
-    return {
+    return  {
         code: error.code ? error.code : 0,
         message: error.message ? error.message : 'Can\'t execute request'
     }
