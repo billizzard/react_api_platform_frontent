@@ -2,10 +2,12 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {toggleSidebar} from "../../../store/actions";
 import {Link} from 'react-router-dom';
+import {AdminLayoutState} from "../../../types/common/state";
+import {IProps} from "../../../types/common";
 
-class TopSidebar extends Component {
+class TopSidebar extends Component<IProps & AdminLayoutState> {
     handleToggleSidebar = () => {
-        const isOpen = this.props.admin_layout.leftSidebar ? !this.props.admin_layout.leftSidebar.isOpen : true;
+        const isOpen = this.props.adminLayout.leftSidebar ? !this.props.adminLayout.leftSidebar.isOpen : true;
         this.props.dispatch(toggleSidebar(isOpen))
     }
 
@@ -35,7 +37,7 @@ class TopSidebar extends Component {
 
 function mapStateToProps(state) {
     return {
-        admin_layout: state.admin_layout
+        adminLayout: state.adminLayout
     }
 }
 

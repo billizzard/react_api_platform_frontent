@@ -1,8 +1,8 @@
 import {loginUserRequest, registrationUserRequest} from "../requests/userRequest";
 import {USER_LOGIN, USER_REGISTRATION} from "../../constants/actionTypes";
 
-export const loginUser = ({username, password}) => async dispatch => {
-    const response = await loginUserRequest({username, password});
+export const loginUser = (username: string, password: string) => async dispatch => {
+    const response = await loginUserRequest(username, password);
 
     if (response) {
         dispatch({
@@ -12,12 +12,12 @@ export const loginUser = ({username, password}) => async dispatch => {
     }
 };
 
-export const registrationUser = ({username, password, confirm_password}) => async dispatch => {
-    const response = await registrationUserRequest({
+export const registrationUser = (username: string, password: string, confirm_password: string) => async dispatch => {
+    const response = await registrationUserRequest(
         username,
         password,
         confirm_password
-    });
+    );
 
     if (response) {
         dispatch({

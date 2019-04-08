@@ -20,7 +20,7 @@ const variantIcon = {
     info: InfoIcon,
 };
 
-const styles1 = theme => ({
+const styles = theme => ({
     success: {
         backgroundColor: green[600],
     },
@@ -76,4 +76,4 @@ function SnackbarMessage(props) {
     );
 }
 
-export default withStyles(styles1)(SnackbarMessage);
+export default withStyles(styles)(SnackbarMessage);

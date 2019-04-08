@@ -10,12 +10,16 @@ import {Provider} from 'react-redux'
 import {createStore, applyMiddleware} from "redux";
 import reducers from './store/reducers'
 import {errorMiddleware} from "./helpers/errors/errorMiddleware";
+import {composeWithDevTools} from "redux-devtools-extension";
 
-const createStoreWithMiddleware = applyMiddleware(errorMiddleware, thunk)(createStore)
+const composeEnhancers = composeWithDevTools({});
+const store = createStore(reducers, composeEnhancers(
+    applyMiddleware(errorMiddleware, thunk),
+));
 
 const App = () => {
     return (
-        <Provider store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
+        <Provider store={store}>
             <BrowserRouter>
                 <Routes/>
             </BrowserRouter>

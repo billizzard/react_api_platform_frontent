@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import FrontLayoutHoc from "../../../hoc/FrontLayoutHoc";
-import {connect} from 'react-redux'
-import {loginUser} from '../../../store/actions'
-import {saveAuthInfo} from "../../../helpers/storage_helper";
+import {registrationUser} from "../../../store/actions";
+import {connect} from "react-redux";
+import {IProps} from "../../../types/common";
 
-class Login extends Component {
+class Registration extends Component<IProps> {
     state = {
         username: '',
-        password: ''
+        password: '',
+        confirm_password: ''
     }
 
     handleInputEmail = (event) => {
@@ -18,15 +19,22 @@ class Login extends Component {
         this.setState({password: event.target.value})
     }
 
+    handleInputConfirmPassword = (event) => {
+        this.setState({confirm_password: event.target.value})
+    }
+
     submitForm = (e) => {
         e.preventDefault();
-        this.props.dispatch(loginUser(this.state))
+        this.props.dispatch(registrationUser(
+            this.state.username,
+            this.state.password,
+            this.state.confirm_password,
+        ))
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
-        if (nextProps.user.auth.token) {
-            saveAuthInfo(nextProps.user.auth.token);
-            this.props.history.push('/room');
+        if (nextProps.user.auth.id) {
+            this.props.history.push('/security/login');
         }
     }
 
@@ -34,7 +42,7 @@ class Login extends Component {
         return (
             <div>
                 <form onSubmit={this.submitForm}>
-                  <h2>Log in here</h2>
+                    <h2>Registration</h2>
 
                     <div className="form_element">
                         <input
@@ -54,6 +62,15 @@ class Login extends Component {
                         />
                     </div>
 
+                    <div className="form_element">
+                        <input
+                            type="password"
+                            placeholder="Repeat Password"
+                            value={this.state.confirm_password}
+                            onChange={this.handleInputConfirmPassword}
+                        />
+                    </div>
+
                     <button type="submit">Log in</button>
                 </form>
             </div>
@@ -67,4 +84,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, null)(FrontLayoutHoc(Login))
+export default connect(mapStateToProps, null)(FrontLayoutHoc(Registration))

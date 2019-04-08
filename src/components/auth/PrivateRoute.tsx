@@ -1,8 +1,15 @@
 import React, {Component} from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { getUserRoles } from "../../helpers/storage_helper";
+import { getUserRoles } from "../../helpers/storageHelper";
 
-class PrivateRoute extends Component {
+type PrivateRouteProps = {
+    roles: [string],
+    path: string,
+    exact: boolean,
+    component: any
+}
+
+class PrivateRoute extends Component<PrivateRouteProps> {
 
     isUserHasPermissions = () => {
         const userRoles = getUserRoles()

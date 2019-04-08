@@ -1,5 +1,5 @@
 import React from 'react';
-import {removeAuthInfo} from "../../../helpers/storage_helper";
+import {removeAuthInfo} from "../../../helpers/storageHelper";
 const Logout = (props) => {
 
     removeAuthInfo();

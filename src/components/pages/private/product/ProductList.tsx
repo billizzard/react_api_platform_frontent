@@ -32,7 +32,7 @@ class ProductList extends Component {
         return (
             <div>
                 <div className="card">
-                    <form className="form-horizontal" onSubmit={this.submitForm}>
+                    <form className="form-horizontal">
                         <div className="card-body">
                             <h4 className="card-title">Products</h4>
                             <div className="form-group row">

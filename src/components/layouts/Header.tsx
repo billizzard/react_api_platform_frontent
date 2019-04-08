@@ -38,4 +38,4 @@ const TopBar = (props) => {
   );
 };
 
-export default withStyles(styles)(TopBar);
+export default withStyles(styles as any)(TopBar);

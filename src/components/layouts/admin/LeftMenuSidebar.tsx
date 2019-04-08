@@ -4,15 +4,17 @@ import AdminLeftMenu from '../../menus/AdminLeftMenu/'
 import {leftAdminMenu} from '../../../constants/menus'
 import {toggleSidebar} from "../../../store/actions";
 import {connect} from "react-redux";
+import {IProps} from "../../../types/common";
+import {AdminLayoutState} from "../../../types/common/state";
 
-class LeftMenuSidebar extends Component {
+class LeftMenuSidebar extends Component<IProps & AdminLayoutState> {
     handleToggleSidebar = () => {
-        const isOpen = this.props.admin_layout.leftSidebar ? !this.props.admin_layout.leftSidebar.isOpen : true;
+        const isOpen = this.props.adminLayout.leftSidebar ? !this.props.adminLayout.leftSidebar.isOpen : true;
         this.props.dispatch(toggleSidebar(isOpen))
     }
 
     render() {
-        const isOpen = this.props.admin_layout.leftSidebar ? !this.props.admin_layout.leftSidebar.isOpen : true;
+        const isOpen = this.props.adminLayout.leftSidebar ? !this.props.adminLayout.leftSidebar.isOpen : true;
         return (
             <nav id="sidebar" className={isOpen ? '' : 'active'}>
                 <div className="sidebar-header">
@@ -28,7 +30,7 @@ class LeftMenuSidebar extends Component {
 
 function mapStateToProps(state) {
     return {
-        admin_layout: state.admin_layout
+        adminLayout: state.adminLayout
     }
 }
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {loginUser} from "../../../store/actions";
-import {saveAuthInfo} from "../../../helpers/storage_helper";
+import {saveAuthInfo} from "../../../helpers/storageHelper";
 
 class MenuItem extends Component {
     state = {

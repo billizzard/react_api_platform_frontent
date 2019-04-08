@@ -3,9 +3,16 @@ import Snackbar from "@material-ui/core/Snackbar";
 import SnackbarMessage from "./SnackbarMessage";
 import {connect} from "react-redux";
 import {closeSnackbar} from "../../../store/actions/snackbarAction";
+import {IProps} from "../../../types/common";
 
-class GlobalSnackbar extends React.Component {
-    handleClose = (event, reason) => {
+type GlobalSnackbarProps = {
+    isOpen: boolean,
+    message: string,
+    type: string,
+}
+
+class GlobalSnackbar extends React.Component<IProps & GlobalSnackbarProps> {
+    handleClose = (event, reason): void => {
         if (reason === 'clickaway') {
             return;
         }

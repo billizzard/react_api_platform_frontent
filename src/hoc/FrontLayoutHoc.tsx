@@ -6,8 +6,12 @@ import Header from '../components/layouts/Header'
 import Snackbar from '../components/popups/snackbar/GlobalSnackbar'
 import LoadingOverlay from "../components/layouts/LoadingOverlay";
 
+type HOCProps = {
+    isPageLoading: boolean,
+}
+
 const FrontLayoutHoc = (WrappedPage) => {
-    class HOC extends React.Component {
+    class HOC extends React.Component<HOCProps> {
         render() {
             return (
                 <div>
