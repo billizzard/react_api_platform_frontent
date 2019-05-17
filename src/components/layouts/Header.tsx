@@ -30,7 +30,7 @@ const TopBar = (props) => {
               </Typography>
               <span>sdfsdf</span>
               <Button href="/security/registration" variant="outlined">Registration</Button>
-              <Button color="primary" variant="outlined">
+              <Button href="/security/login" color="primary" variant="outlined">
                   Login
               </Button>
           </Toolbar>

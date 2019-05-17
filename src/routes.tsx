@@ -2,15 +2,16 @@ import React, {Component} from 'react';
 import { Route, Switch} from 'react-router-dom';
 
 // COMPONENTS
-import Home from './components/pages/Home'
-import Registration from './components/pages/security/Registration'
-import Login from './components/pages/security/Login'
-import Logout from './components/pages/security/Logout'
-import ProductList from './components/pages/private/product/ProductList'
-import IndexRoom from './components/pages/private/IndexRoom'
+import Home from './containers/pages/Home'
+import Registration from './containers/pages/security/Registration'
+import Login from './containers/pages/security/Login'
+import Logout from './containers/pages/security/Logout'
+import ProductList from './containers/pages/private/product/ProductList'
+import IndexRoom from './containers/pages/private/IndexRoom'
 import PrivateRoute from './components/auth/PrivateRoute'
 import {ROLE_USER} from "./constants/roles";
-import NotFound from "./components/pages/NotFound";
+import NotFound from "./containers/pages/NotFound";
+import ProductCreate from "./containers/pages/private/product/ProductCreate";
 
 class Routes extends Component {
     render() {
@@ -24,6 +25,12 @@ class Routes extends Component {
                     roles={[ROLE_USER]}
                     exact
                     component={ProductList}
+                />
+                <PrivateRoute
+                    path="/room/products/create"
+                    roles={[ROLE_USER]}
+                    exact
+                    component={ProductCreate}
                 />
                 <PrivateRoute
                     path="/room"

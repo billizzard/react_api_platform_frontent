@@ -1,7 +1,5 @@
 export function getRoles(token: string): [] | null {
     const payload = parseJWT(token);
-    console.log('%c PAYLOAD', 'background: orange; color: red;');
-    console.log(payload)
     return payload && payload.roles ? payload.roles : null;
 }
 

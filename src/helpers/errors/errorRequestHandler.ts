@@ -2,7 +2,10 @@ import {HttpError} from "../../types/common";
 import {AxiosError} from "axios";
 
 export default function (error: AxiosError): HttpError {
-    let message = error.response && error.response.data && error.response.data.message;
+    let message = error.response && error.response.data && (
+        error.response.data.message || error.response.data['hydra:description']
+    );
+
     let code = 500;
 
     if (error.response && error.response.status >= 500) {

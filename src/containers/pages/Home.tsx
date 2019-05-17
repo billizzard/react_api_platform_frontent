@@ -2,13 +2,12 @@ import React from 'react';
 
 import FrontLayoutHoc from '../../hoc/FrontLayoutHoc'
 import {connect} from "react-redux";
-import {testAction} from "../../store/actions/testAction";
 import {loadingOverlay} from "../../helpers/pageHelper";
 import {IProps} from "../../types/common";
 
 class Home extends React.Component<IProps>{
     onClickHandler = (): void => {
-        this.props.dispatch(loadingOverlay(testAction()));
+        // this.props.dispatch(loadingOverlay(testAction()));
     }
 
     render() {

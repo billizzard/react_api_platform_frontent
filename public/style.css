@@ -181,3 +181,15 @@ a.article:hover {
         display: none;
     }
 }
+
+/*  */
+.btn.add-item-btn {
+    font-size: 25px;
+    padding: 0;
+    margin-top: -10px;
+    color: #28a745;
+}
+
+.btn.add-item-btn:hover {
+    color: #218838;
+}

@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "noImplicitAny": false,
+    "noResolve": false,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -22,5 +23,8 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "./node_modules/**/*"
   ]
 }

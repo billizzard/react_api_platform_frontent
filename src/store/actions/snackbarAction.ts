@@ -10,6 +10,10 @@ export const openSnackbar = (type, message) => dispatch => {
     })
 };
 
+// export const openErrorSnackbar = (message) => dispatch => {
+//     openSnackbar('error', message)(dispatch);
+// };
+
 export const closeSnackbar = () => dispatch => {
     dispatch({
         type: CLOSE_SNACKBAR,
