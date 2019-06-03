@@ -8,6 +8,7 @@ import {openSnackbar} from "../../../../store/actions/snackbarAction";
 import {postProductWatcher} from "../../../../store/actions/productWatcherAction";
 import {IProps} from "../../../../types/common";
 import {ProductFormType} from "../../../../types/common/state";
+import {IProductWatcher} from "../../../../types/models/IProductWatcher";
 
 type ProductCreateProps = {
     formErrors: string,
@@ -32,7 +33,10 @@ class ProductCreate extends React.Component<IProps & ProductFormType> {
     }
 
     submit = values => {
-        this.props.dispatch(postProductWatcher({values.title, values.url, values.currentPrice, values.percent}, this.props.history))
+        const {title, url, currentPrice, percent} = values;
+
+        const productWatcher: IProductWatcher = {title, url, currentPrice, percent}
+        this.props.dispatch(postProductWatcher(productWatcher, this.props.history))
     }
     
     render() {

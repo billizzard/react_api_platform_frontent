@@ -11,27 +11,16 @@ export const leftAdminMenu = {
             url: '/room/products'
         },
         {
+            title: 'Messages',
+            url: '/room/messages'
+        },
+        {
             title: 'Home',
             items: [
                 {title: 'Home1', url: '/'},
                 {title: 'Home2', url: '/'},
                 {title: 'Home3', url: '/'},
             ]
-        },
-        {
-            title: 'About',
-        },
-        {
-            title: 'Pages',
-            items: [
-                {title: 'Page1', url: '/'},
-                {title: 'Page2', url: '/'},
-                {title: 'Page3', url: '/'},
-            ]
-        },
-        {
-            title: 'Contact',
-            url: '/contact',
         },
     ]
 };

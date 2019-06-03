@@ -7,6 +7,7 @@ import Registration from './containers/pages/security/Registration'
 import Login from './containers/pages/security/Login'
 import Logout from './containers/pages/security/Logout'
 import ProductList from './containers/pages/private/product/ProductList'
+import MessageList from './containers/pages/private/message/MessageList'
 import IndexRoom from './containers/pages/private/IndexRoom'
 import PrivateRoute from './components/auth/PrivateRoute'
 import {ROLE_USER} from "./constants/roles";
@@ -25,6 +26,12 @@ class Routes extends Component {
                     roles={[ROLE_USER]}
                     exact
                     component={ProductList}
+                />
+                <PrivateRoute
+                    path="/room/messages"
+                    roles={[ROLE_USER]}
+                    exact
+                    component={MessageList}
                 />
                 <PrivateRoute
                     path="/room/products/create"

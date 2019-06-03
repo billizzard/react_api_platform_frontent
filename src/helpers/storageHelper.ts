@@ -1,21 +1,22 @@
 import {getRoles} from "./jwtHelper";
+import {ROLES_KEY, TOKEN_KEY} from "../constants/storage";
 
 export function saveAuthInfo(token: string): void {
-    saveItem('authToken', token);
+    saveItem(TOKEN_KEY, token);
     const roles = getRoles(token);
     if (roles) {
-        saveItem('roles', JSON.stringify(roles))
+        saveItem(ROLES_KEY, JSON.stringify(roles))
     }
 }
 
 export function removeAuthInfo(): void {
-    removeItem('authToken');
-    removeItem('roles');
+    removeItem(TOKEN_KEY);
+    removeItem(ROLES_KEY);
 }
 
 export function getUserRoles(): Array<string> | null {
-    if (localStorage.getItem("roles")) {
-        const roles = localStorage.getItem("roles");
+    if (localStorage.getItem(ROLES_KEY)) {
+        const roles = localStorage.getItem(ROLES_KEY);
         if (roles) {
             return JSON.parse(roles);
         }

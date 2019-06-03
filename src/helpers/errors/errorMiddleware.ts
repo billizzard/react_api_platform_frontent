@@ -1,7 +1,6 @@
 import {OPEN_SNACKBAR} from "../../constants/actionTypes";
 import errorRequestHandler from "./errorRequestHandler";
 import {getErrorPayload} from "../snackbarHelper";
-import {AxiosError} from "axios";
 
 /**
  * Just for catch errors during request and pass them to Snackbar

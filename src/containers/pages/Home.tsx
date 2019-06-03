@@ -2,7 +2,6 @@ import React from 'react';
 
 import FrontLayoutHoc from '../../hoc/FrontLayoutHoc'
 import {connect} from "react-redux";
-import {loadingOverlay} from "../../helpers/pageHelper";
 import {IProps} from "../../types/common";
 
 class Home extends React.Component<IProps>{

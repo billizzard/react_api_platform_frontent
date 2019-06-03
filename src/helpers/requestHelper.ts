@@ -7,3 +7,17 @@ export function postRequest(url: string, data: any): AxiosPromise {
     });
 }
 
+export function getRequest(url: string): AxiosPromise {
+    return axios.get(url, {
+        headers: { Authorization: "Bearer " + getItem('authToken') }
+    });
+}
+
+/** Headers for a pagination */
+export const jsonldHeaders = {
+    'Accept': 'application/ld+json',
+};
+export const jsonHeaders = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+};

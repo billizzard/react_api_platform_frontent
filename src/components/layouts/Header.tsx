@@ -1,41 +1,30 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import {BRAND_NAME} from "../../constants/app";
 
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
-
-const styles = theme => ({
-    '@global': {
-        body: {
-            backgroundColor: theme.palette.common.white,
-        },
-    },
-    appBar: {
-        position: 'relative',
-    },
-    toolbarTitle: {
-        flex: 1,
-    },
-});
-
-const TopBar = (props) => {
-  const { classes } = props;
+const TopBar = () => {
   return (
-      <AppBar position="static" color="default" className={classes.appBar}>
-          <Toolbar>
-              <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-                  Company name
-              </Typography>
-              <span>sdfsdf</span>
-              <Button href="/security/registration" variant="outlined">Registration</Button>
-              <Button href="/security/login" color="primary" variant="outlined">
-                  Login
-              </Button>
-          </Toolbar>
-      </AppBar>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <Link to="/" className="navbar-brand" >{BRAND_NAME}</Link>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                  aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"/>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarText">
+              <ul className="navbar-nav mr-auto">
+                  <li className="nav-item active">
+                      <Link to="/security/login" className="nav-link" >Login</Link>
+                  </li>
+                  <li className="nav-item">
+                      <Link to="/security/registration" className="nav-link" >Registration</Link>
+                  </li>
+              </ul>
+              <span className="navbar-text">
+                Navbar text with an inline element
+                </span>
+          </div>
+      </nav>
   );
 };
 
-export default withStyles(styles as any)(TopBar);
+export default TopBar;

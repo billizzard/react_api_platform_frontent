@@ -1,15 +1,23 @@
-import {post} from "../requests/productWatcherRequest";
-import {POST_PRODUCT_WATCHER} from "../../constants/actionTypes";
-import history from 'history/createHashHistory';
+import {post, get} from "../requests/productWatcherRequest";
+import {GET_LIST_PRODUCT_WATCHER} from "../../constants/actionTypes";
+// import history from 'history/createHashHistory';
+import {IProductWatcher} from "../../types/models/IProductWatcher";
 
-export const postProductWatcher = (productWatcher, history) => async dispatch => {
-    const response = await post(title, url, currentPrice, +percent);
+export const postProductWatcher = (productWatcher: IProductWatcher, history: any) => async dispatch => {
+    const response = await post(productWatcher.title, productWatcher.url, productWatcher.currentPrice, +productWatcher.percent);
 
     if (response) {
         history.push('/room/products/')
-        // dispatch({
-        //     type: POST_PRODUCT_WATCHER,
-        //     payload: response.data
-        // })
+    }
+};
+
+export const getListProductWatcher = () => async dispatch => {
+    const response = await get();
+
+    if (response) {
+        dispatch({
+            type: GET_LIST_PRODUCT_WATCHER,
+            payload: response.data
+        })
     }
 };

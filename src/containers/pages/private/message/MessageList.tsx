@@ -6,10 +6,11 @@ import {Link} from 'react-router-dom';
 import {getListProductWatcher} from "../../../../store/actions/productWatcherAction";
 import {IProps} from "../../../../types/common";
 import {ProductFormType} from "../../../../types/common/state";
+import {getListMessage} from "../../../../store/actions";
 
-class ProductList extends Component <IProps> {
+class MessageList extends Component <IProps> {
     componentWillMount(): void {
-        this.props.dispatch(getListProductWatcher());
+        this.props.dispatch(getListMessage());
     }
 
     //
@@ -51,7 +52,7 @@ class ProductList extends Component <IProps> {
                     <form className="form-horizontal">
                         <div className="card-body">
                             <div className="d-flex">
-                                <h4 className="card-title mr-auto">Products</h4>
+                                <h4 className="card-title mr-auto">Messages</h4>
                                 <Link to="/room/products/create">
                                     <button className="btn add-item-btn"><i className="fa fa-plus-square"></i></button>
                                 </Link>
@@ -103,4 +104,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, null)(AdminLayoutHoc(ProductList))
+export default connect(mapStateToProps, null)(AdminLayoutHoc(MessageList))
